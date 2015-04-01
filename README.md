@@ -1,6 +1,6 @@
 # motd
 
-we use this at sessionm to display dumb stuff on a big monitor
+we use this at sessionm to display stuff on a big monitor
 
 it looks like this (but looks better on a big screen obviously)
 
