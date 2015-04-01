@@ -1,15 +1,18 @@
 <head>
   <title>mBoard</title>
+  <link href='http://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-<em><h2>mBoard</h2></em>
+<div class="header">
+<center><em><h2>mBoard</h2></em></center>
+</div>
   
   {{> board}}
 </body>
 
 <template name="board">
-  <h1>{{currentText}}</h1>
+<center><h1>{{currentText}}</h1>
   <input type="text" placeholder="Say something nice!">
-  <button>Submit</button>
+  <button>Submit</button></center>
 </template>
