@@ -3,15 +3,23 @@ if (Meteor.isClient) {
   Meteor.subscribe('messages');
   Template.board.helpers({
     currentText: function(){
+      setTimeout(function(){emojify.run();}, 500);
       return Messages.findOne({}, {sort: {timestamp: -1}}).text;
-    }
+    },
   });
-
+  
   Template.board.events({
     'click button': function(){
       var content = $('input').val();
       Meteor.call('addMessage', content);
       $('input').val('');
+    }
+  });
+
+  var query = Messages.find({}, {sort: {timestamp: -1}});
+  var handle = query.observeChanges({
+    added: function(){
+      $('img').remove();
     }
   });
 }
